@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f2f2f2;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.profile-hello {
+  text-align: center;
+  font-size: 15px;
+}
+
+.control-panel {
+  text-align: center;
+}
+
+.profile-card {
+  width: 390px;
+  text-align: center;
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 0px 0px 24px 0px rgba(48, 48, 56, 0.15);
+}
+.profile-card .profile-header {
+  height: 100px;
+}
+
+.profile-card .profile-body {
+  background-color: #fff;
+  padding: 20px 40px 40px 40px;
+}
+
+.profile-card .profile-body .user-img {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.profile-card .profile-body .user-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.profile-card .profile-body .name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.profile-card .profile-body .bio {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 22px 0px 32px 0px;
+}
+.social-icon ul {
+  list-style-type: none;
+}
+.social-icon ul li {
+  display: inline-block;
+}
+.social-icon ul li a {
+  margin-right: 5px;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #ddd;
+  display: block;
+  border-radius: 50%;
+  transition: all 0.5s ease-out;
+}
+.social-icon ul {
+  margin: 0;
+  padding: 0;
+}
+.social-icon ul li a:hover {
+  background-color: #000;
+  border: 1px solid #000;
+}
+.social-icon ul li a i:hover,
+.social-icon ul li a:hover i {
+  color: #fff;
+}
+.social-icon ul li a i {
+  line-height: 37px;
+  color: #081e0e;
+  font-size: 20px;
+}
