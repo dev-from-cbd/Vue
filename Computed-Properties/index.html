@@ -20,23 +20,32 @@
   <body>
     <div id="app">
       <div class="wrapper">
+        <!-- 
         <div class="control-panel">
-          <p class="profile-hello">Review of {{ first_name }}</p>
+          <p class="profile-hello">
+            Review of {{ fullName }}
+
+            <input type="text" v-model="tempName" />
+
+            <button v-on:click="setName()">Set</button>
+            <button v-on:click="rndValue()">{{ rndNum }}</button>
+          </p>
         </div>
+        -->
 
         <div class="profile-card">
           <div class="profile-header">
             <img :src="profile_back_img" alt="profile_back_img" />
           </div>
 
-          <div class="profile_body">
+          <div class="profile-body">
             <div class="user-img">
-              <img :src="profile_img" alt="profile_img" />
+              <img :src="profile_img" />
             </div>
 
-            <div class="name">{{ first_name }}</div>
+            <div class="name">{{ fullName }}</div>
 
-            <div class="bio">
+            <div class="review">
               <p>{{ review }}</p>
             </div>
 
@@ -54,12 +63,15 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script>
       var app = new Vue({
         el: "#app",
         data: {
+          tempName: "",
+
+          rndNum: 0,
           first_name: "Shaun",
           last_name: "Addison",
           review: "Great service, highly recommend!",
@@ -72,8 +84,33 @@
         },
 
         methods: {
-          getFullName: function() {}
-        }
+          getFullName: function () {
+            console.log("getFullName Method");
+            return this.first_name;
+          },
+
+          rndValue: function () {
+            this.rndNum = Math.floor(Math.random() * 100 + 1);
+          },
+
+          setName: function () {
+            this.fullName = this.tempName;
+          },
+        },
+
+        computed: {
+          fullName: {
+            get: function () {
+              return this.first_name;
+            },
+
+            set: function (value) {
+              let names = value.split(" ");
+              this.first_name = names[0];
+              this.last_name = names[names.length - 1];
+            },
+          },
+        },
       });
     </script>
   </body>
